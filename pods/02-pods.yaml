@@ -1,0 +1,15 @@
+apiversion: v1
+kind: pod
+metadata:
+  name: multi-container-pod
+  namespace: roboshop
+spec:
+  containers:
+    - name: hello-world-container
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+    - name: hello-world-container-2
+      image: alpine:latest
+      ports:
+        - containerPort: 8080

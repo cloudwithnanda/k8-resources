@@ -1,0 +1,15 @@
+apiversion: v1
+kind: Namespace
+metadata:
+  name: my-namespace  
+  labels:
+    environment: production
+    team: devops
+  annotations:
+    owner: "https://example.com/owner"  
+spec:
+  containers:
+    - name: hello-world-container
+      image: nginx:latest
+      ports:
+        - containerPort: 80
