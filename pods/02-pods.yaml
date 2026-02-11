@@ -5,13 +5,11 @@ metadata:
   namespace: my-namespace
 spec:
   containers:
-    - name: hello-world-container
+    - name: nginx
       image: nginx:latest
       ports:
         - containerPort: 80
-    - name: hello-world-container-2
-      image: nginx:latest
-      command: ["sh", "-c"]
-      args:
-        - nginx -g "daemon off;" -c /etc/nginx/nginx.conf
 
+    - name: sidecar
+      image: busybox
+      command: ["sh","-c","while true; do echo sidecar running; sleep 5; done"]
