@@ -7,12 +7,3 @@ metadata:
     team: devops
   annotations:
     owner: "https://example.com/owner"  
-spec:
-  containers:
-    - name: hello-pod
-      image: nginx
-      ports:
-        - containerPort: 80
-    - name: almalinux
-      image: almalinux:8
-      command: ["/bin/bash", "-c", "sleep 300"]
