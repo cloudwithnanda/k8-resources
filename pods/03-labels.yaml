@@ -1,9 +1,18 @@
 apiVersion: v1
-kind: Namespace
+kind: Pod
 metadata:
-  name: my-namespace  
+  name: annotations
   labels:
-    environment: production
-    team: devops
+    course: DevOps
   annotations:
-    owner: "https://example.com/owner"  
+    com.roboshop.training.duration: "120HRS"
+    jenkins.url: "http://jenkins.roboshop.com:8080"
+spec:
+  containers:
+    - name: hello-pod
+      image: nginx
+      ports:
+        - containerPort: 80
+    - name: almalinux
+      image: almalinux:8
+      command: ["/bin/bash", "-c", "sleep 300"]
